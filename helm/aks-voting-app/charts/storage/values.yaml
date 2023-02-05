@@ -81,10 +81,3 @@ nodeSelector: {}
 tolerations: []
 
 affinity: {}
-
-db: 
-  MYSQL_PASSWORD: topsecret
-  MYSQL_USER: admin
-  MYSQL_DATABASE: azurevote
-  MYSQL_ROOT_PASSWORD: topsecret
-  MYSQL_HOST: vote-storage

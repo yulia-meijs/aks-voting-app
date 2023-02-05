@@ -2,13 +2,14 @@ kind: ConfigMap
 apiVersion: v1
 metadata:
   name: {{ include "app.fullname" . }}
+  namespace: {{ .Values.global.namespace }}
   labels:
     {{- include "app.labels" . | nindent 4 }}
 data:
-  MYSQL_PASSWORD: {{ .Values.db.MYSQL_PASSWORD }}
-  MYSQL_USER: {{ .Values.db.MYSQL_USER }}
-  MYSQL_DATABASE: {{ .Values.db.MYSQL_DATABASE }}
-  MYSQL_ROOT_PASSWORD: {{ .Values.db.MYSQL_ROOT_PASSWORD }}
-  MYSQL_HOST: {{ .Values.db.MYSQL_HOST }}
-  ANALYTICS_PORT: "{{ .Values.backend.ANALYTICS_PORT }}"
-  ANALYTICS_HOST: {{ .Values.backend.ANALYTICS_HOST }}
+  MYSQL_PASSWORD: {{ .Values.global.db.mysqlPassword }}
+  MYSQL_USER: {{ .Values.global.db.mysqlUser }}
+  MYSQL_DATABASE: {{ .Values.global.db.mysqlDatabase }}
+  MYSQL_ROOT_PASSWORD: {{ .Values.global.db.mysqlRootPassword }}
+  MYSQL_HOST: {{ .Values.global.db.mysqlHost }}
+  ANALYTICS_PORT: "{{ .Values.global.backend.analyticsPort }}"
+  ANALYTICS_HOST: {{ .Values.global.backend.analyticsHost }}

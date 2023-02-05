@@ -76,13 +76,15 @@ storage:
 app:
   enabled: true
 
-db: 
-  MYSQL_PASSWORD: topsecret
-  MYSQL_USER: admin
-  MYSQL_DATABASE: azurevote
-  MYSQL_ROOT_PASSWORD: topsecret
-  MYSQL_HOST: vote-storage
+global:
+  namespace: aks-vote-app
+  db: 
+    mysqlPassword: topsecret
+    mysqlUser: admin
+    mysqlDatabase: azurevote
+    mysqlRootPassword: topsecret
+    mysqlHost: vote-storage
 
-backend:
-  ANALYTICS_PORT: 8082
-  ANALYTICS_HOST: vote-analytics
+  backend:
+    analyticsPort: 8082
+    analyticsHost: vote-analytics

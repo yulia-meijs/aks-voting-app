@@ -2,11 +2,12 @@ kind: ConfigMap
 apiVersion: v1
 metadata:
   name: {{ include "storage.fullname" . }}
+  namespace: {{ .Values.global.namespace }}
   labels:
     {{- include "storage.labels" . | nindent 4 }}
 data:
-  MYSQL_PASSWORD: {{ .Values.db.MYSQL_PASSWORD }}
-  MYSQL_USER: {{ .Values.db.MYSQL_USER }}
-  MYSQL_DATABASE: {{ .Values.db.MYSQL_DATABASE }}
-  MYSQL_ROOT_PASSWORD: {{ .Values.db.MYSQL_ROOT_PASSWORD }}
-  MYSQL_HOST: {{ .Values.db.MYSQL_HOST }}
+  MYSQL_PASSWORD: {{ .Values.global.db.mysqlPassword }}
+  MYSQL_USER: {{ .Values.global.db.mysqlUser }}
+  MYSQL_DATABASE: {{ .Values.global.db.mysqlDatabase }}
+  MYSQL_ROOT_PASSWORD: {{ .Values.global.db.mysqlRootPassword }}
+  MYSQL_HOST: {{ .Values.global.db.mysqlHost }}
