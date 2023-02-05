@@ -10,6 +10,6 @@ data:
   MYSQL_USER: {{ .Values.global.db.mysqlUser }}
   MYSQL_DATABASE: {{ .Values.global.db.mysqlDatabase }}
   MYSQL_ROOT_PASSWORD: {{ .Values.global.db.mysqlRootPassword }}
-  MYSQL_HOST: {{ .Values.global.db.mysqlHost }}
+  MYSQL_HOST: "{{ .Release.Name }}-storage"
   ANALYTICS_PORT: "{{ .Values.global.backend.analyticsPort }}"
-  ANALYTICS_HOST: {{ .Values.global.backend.analyticsHost }}
+  ANALYTICS_HOST: "{{ .Release.Name }}-analytics"

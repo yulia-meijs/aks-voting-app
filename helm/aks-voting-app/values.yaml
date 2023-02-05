@@ -83,8 +83,6 @@ global:
     mysqlUser: admin
     mysqlDatabase: azurevote
     mysqlRootPassword: topsecret
-    mysqlHost: vote-storage
 
   backend:
     analyticsPort: 8082
-    analyticsHost: vote-analytics
